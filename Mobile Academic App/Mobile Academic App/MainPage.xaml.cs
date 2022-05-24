@@ -14,5 +14,10 @@ namespace Mobile_Academic_App
         {
             InitializeComponent();
         }
+
+        private void BtnNewTerm_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

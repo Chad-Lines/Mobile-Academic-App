@@ -1,0 +1,16 @@
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\bin\Debug\netstandard2.0\Mobile Academic App.deps.json
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\bin\Debug\netstandard2.0\Mobile Academic App.dll
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\bin\Debug\netstandard2.0\Mobile Academic App.pdb
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\Mobile Academic App.csproj.AssemblyReference.cache
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\Mobile Academic App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\Mobile Academic App.AssemblyInfoInputs.cache
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\Mobile Academic App.AssemblyInfo.cs
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\Mobile Academic App.csproj.CoreCompileInputs.cache
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\Mobile Academic App.dll
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\refint\Mobile Academic App.dll
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\Mobile Academic App.pdb
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\ref\Mobile Academic App.dll
+C:\Users\chadl\source\repos\Mobile Academic App\Mobile Academic App\Mobile Academic App\obj\Debug\netstandard2.0\AddTerm.xaml.g.cs
