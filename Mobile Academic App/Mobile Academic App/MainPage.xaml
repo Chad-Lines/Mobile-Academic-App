@@ -2,14 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile_Academic_App.MainPage">
-    <!-- -->
+    
+    <!-- ADD NEW COURSE --> 
+    
     <StackLayout>
-
         <StackLayout Margin="20, 20, 20, 0">
-            <Entry Placeholder="Name"/>
-            <Button Text="Add "/>
-        </StackLayout>
-
+            
+            <Label Text="New Course" VerticalOptions="Center"         
+                   FontAttributes="Bold" HorizontalOptions="Center" FontSize="24"/>         <!-- Page Label -->                     
+            
+            <Entry Placeholder="Course Name" x:Name="courseName"/>                          <!-- The course name -->
+            
+            <StackLayout Orientation="Horizontal">                                          <!-- Setting up the area for start and end dates -->
+                <Label Text="Start Date" VerticalOptions="Center"/>                         <!-- Creating the label for the start date -->
+                <DatePicker x:Name="startDate"/>                                            <!-- The start date as a date picker element -->
+                <Label Text="End Date" VerticalOptions="Center"/>                           <!-- Creating the label for the end date -->
+                <DatePicker x:Name="endDate"/>                                              <!-- The end date as a date picker element -->     
+            </StackLayout>                                              
+            
+            <StackLayout Orientation="Horizontal">                                          <!-- Setting up the area for the Course Status -->
+                <Label Text="Course Status" VerticalOptions="Center"/>                      <!-- The label for the Course Status -->
+                <Picker x:Name="courseStatus" Title="Select">                               <!-- Setting up the course status selector -->
+                    <Picker.Items>                                                          <!-- The container for the status selector elements -->
+                        <x:String>In-Progress</x:String>                                    <!-- Adding in the status selector -->
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                        <x:String>To Take</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>            
+            
+            <Entry Placeholder="Instructor Name" x:Name="instructorName"/>                  <!-- The instructor name -->
+            <Entry Placeholder="Instructor Phone" x:Name="instructorPhone"/>                <!-- The instructor phone number -->
+            <Entry Placeholder="Instructor Email" x:Name="instructorEmail"/>                <!-- The instrutor email -->
+            <Entry Placeholder="Notes" x:Name="courseNotes"/>                               <!-- Course notes -->
+            
+            <Button Text="Add New Course" x:Name="btnAddCourse" Clicked="btnAddCourse"/>    <!-- The button to add the new course -->
+        </StackLayout> 
     </StackLayout>
 
 </ContentPage>
