@@ -11,16 +11,17 @@ namespace Mobile_Academic_App
 
         public App()
         {
-            InitializeComponent();
-
-            MainPage = new MainPage();
+            InitializeComponent();            
         }
 
         public App(string filePath)
         {
             // This function overrides part of the main App class
             InitializeComponent();
-            MainPage = new MainPage();
+
+            // This sets the main page to TermsPage and sets it as the root for 
+            // navigation.
+            MainPage = new NavigationPage(new TermsPage());
             FilePath = filePath;
 
         }

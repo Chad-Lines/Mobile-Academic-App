@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mobile_Academic_App.TermsPage">
+
+    <!-- VIEW AND SELECT TERM -->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Clicked="NewTermToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Terms" VerticalOptions="Center"         
+                   FontAttributes="Bold" HorizontalOptions="Center" FontSize="24"/>         <!-- Page Label -->
+            
+            <!-- This is where the term list will be -->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

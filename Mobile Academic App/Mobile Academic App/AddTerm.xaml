@@ -2,11 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile_Academic_App.AddTerm">
+
+    <!-- ADD A NEW TERM -->
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text="New Term" VerticalOptions="Center"         
+                   FontAttributes="Bold" HorizontalOptions="Center" FontSize="24"/>         <!-- Page Label -->         
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

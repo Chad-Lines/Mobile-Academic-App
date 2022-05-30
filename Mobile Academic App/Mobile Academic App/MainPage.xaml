@@ -37,7 +37,8 @@
             <Entry Placeholder="Instructor Email" x:Name="instructorEmail"/>                <!-- The instrutor email -->
             <Entry Placeholder="Notes" x:Name="courseNotes"/>                               <!-- Course notes -->
             
-            <Button Text="Add New Course" x:Name="btnAddCourse" Clicked="btnAddCourse"/>    <!-- The button to add the new course -->
+            <Button Text="Add New Course" x:Name="btnAddCourse" 
+                    Clicked="btnAddCourse_Clicked"/>    <!-- The button to add the new course -->
         </StackLayout> 
     </StackLayout>
 
