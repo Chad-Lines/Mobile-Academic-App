@@ -37,15 +37,17 @@
             <Entry Placeholder="Instructor Email" x:Name="instructorEmail"/>        <!-- The instrutor email -->
             <Entry Placeholder="Notes" x:Name="courseNotes"/>                       <!-- Course notes -->
 
+            <Label Text="Assessments" VerticalOptions="Center"
+                   FontAttributes="Bold" FontSize="18"/>                            <!-- The list of assessments -->            
+            
             <Button Text="Add Objective Assessment" x:Name="btnAddOA"               
                     Clicked="btnAddOA_Clicked"/>                                    <!-- The button to add an OA -->
-
             <Button Text="Add Performance Assessment" x:Name="btnAddPA"         
                     Clicked="btnAddPA_Clicked"/>                                    <!-- The button to add a PA -->
-
             <Button Text="Save New Course" x:Name="btnAddCourse" 
                     Clicked="btnAddCourse_Clicked"/>                                <!-- The button to save the new course -->
         
+            
         </StackLayout> 
     </StackLayout>
 
