@@ -8,13 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Mobile_Academic_App.AddTerm.xaml", "AddTerm.xaml", typeof(global::Mobile_Academic_App.AddTerm))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Mobile_Academic_App.AddPA.xaml", "AddPA.xaml", typeof(global::Mobile_Academic_App.AddPA))]
 
 namespace Mobile_Academic_App {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("AddTerm.xaml")]
-    public partial class AddTerm : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("AddPA.xaml")]
+    public partial class AddPA : global::Xamarin.Forms.ContentPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Entry assessmentName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.DatePicker startDate;
@@ -23,14 +26,15 @@ namespace Mobile_Academic_App {
         private global::Xamarin.Forms.DatePicker endDate;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button btnAddCourse;
+        private global::Xamarin.Forms.Button btnSavePA;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddTerm));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddPA));
+            assessmentName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "assessmentName");
             startDate = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "startDate");
             endDate = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "endDate");
-            btnAddCourse = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnAddCourse");
+            btnSavePA = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "btnSavePA");
         }
     }
 }

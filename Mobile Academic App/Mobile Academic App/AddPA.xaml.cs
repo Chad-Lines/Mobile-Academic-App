@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace Mobile_Academic_App
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddTerm : ContentPage
+    public partial class AddPA : ContentPage
     {
-        public AddTerm()
+        public AddPA()
         {
             InitializeComponent();
         }
 
-        private void btnAddCourse_Clicked(object sender, EventArgs e)
+        private void btnSavePA_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainPage());
+
         }
     }
 }

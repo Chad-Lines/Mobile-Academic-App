@@ -9,22 +9,22 @@
         <StackLayout Margin="20, 20, 20, 0">
             
             <Label Text="New Course" VerticalOptions="Center"         
-                   FontAttributes="Bold" HorizontalOptions="Center" FontSize="24"/>         <!-- Page Label -->                     
+                   FontAttributes="Bold" HorizontalOptions="Center" FontSize="24"/> <!-- Page Label -->                     
             
-            <Entry Placeholder="Course Name" x:Name="courseName"/>                          <!-- The course name -->
+            <Entry Placeholder="Course Name" x:Name="courseName"/>                  <!-- The course name -->
             
-            <StackLayout Orientation="Horizontal">                                          <!-- Setting up the area for start and end dates -->
-                <Label Text="Start Date" VerticalOptions="Center"/>                         <!-- Creating the label for the start date -->
-                <DatePicker x:Name="startDate"/>                                            <!-- The start date as a date picker element -->
-                <Label Text="End Date" VerticalOptions="Center"/>                           <!-- Creating the label for the end date -->
-                <DatePicker x:Name="endDate"/>                                              <!-- The end date as a date picker element -->     
+            <StackLayout Orientation="Horizontal">                                  <!-- Setting up the area for start and end dates -->
+                <Label Text="Start Date" VerticalOptions="Center"/>                 <!-- Creating the label for the start date -->
+                <DatePicker x:Name="startDate"/>                                    <!-- The start date as a date picker element -->
+                <Label Text="End Date" VerticalOptions="Center"/>                   <!-- Creating the label for the end date -->
+                <DatePicker x:Name="endDate"/>                                      <!-- The end date as a date picker element -->     
             </StackLayout>                                              
             
-            <StackLayout Orientation="Horizontal">                                          <!-- Setting up the area for the Course Status -->
-                <Label Text="Course Status" VerticalOptions="Center"/>                      <!-- The label for the Course Status -->
-                <Picker x:Name="courseStatus" Title="Select">                               <!-- Setting up the course status selector -->
-                    <Picker.Items>                                                          <!-- The container for the status selector elements -->
-                        <x:String>In-Progress</x:String>                                    <!-- Adding in the status selector -->
+            <StackLayout Orientation="Horizontal">                                  <!-- Setting up the area for the Course Status -->
+                <Label Text="Course Status" VerticalOptions="Center"/>              <!-- The label for the Course Status -->
+                <Picker x:Name="courseStatus" Title="Select">                       <!-- Setting up the course status selector -->
+                    <Picker.Items>                                                  <!-- The container for the status selector elements -->
+                        <x:String>In-Progress</x:String>                            <!-- Adding in the status selector -->
                         <x:String>Completed</x:String>
                         <x:String>Dropped</x:String>
                         <x:String>To Take</x:String>
@@ -32,13 +32,20 @@
                 </Picker>
             </StackLayout>            
             
-            <Entry Placeholder="Instructor Name" x:Name="instructorName"/>                  <!-- The instructor name -->
-            <Entry Placeholder="Instructor Phone" x:Name="instructorPhone"/>                <!-- The instructor phone number -->
-            <Entry Placeholder="Instructor Email" x:Name="instructorEmail"/>                <!-- The instrutor email -->
-            <Entry Placeholder="Notes" x:Name="courseNotes"/>                               <!-- Course notes -->
-            
-            <Button Text="Add New Course" x:Name="btnAddCourse" 
-                    Clicked="btnAddCourse_Clicked"/>    <!-- The button to add the new course -->
+            <Entry Placeholder="Instructor Name" x:Name="instructorName"/>          <!-- The instructor name -->
+            <Entry Placeholder="Instructor Phone" x:Name="instructorPhone"/>        <!-- The instructor phone number -->
+            <Entry Placeholder="Instructor Email" x:Name="instructorEmail"/>        <!-- The instrutor email -->
+            <Entry Placeholder="Notes" x:Name="courseNotes"/>                       <!-- Course notes -->
+
+            <Button Text="Add Objective Assessment" x:Name="btnAddOA"               
+                    Clicked="btnAddOA_Clicked"/>                                    <!-- The button to add an OA -->
+
+            <Button Text="Add Performance Assessment" x:Name="btnAddPA"         
+                    Clicked="btnAddPA_Clicked"/>                                    <!-- The button to add a PA -->
+
+            <Button Text="Save New Course" x:Name="btnAddCourse" 
+                    Clicked="btnAddCourse_Clicked"/>                                <!-- The button to save the new course -->
+        
         </StackLayout> 
     </StackLayout>
 

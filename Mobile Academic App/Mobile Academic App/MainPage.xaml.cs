@@ -19,5 +19,15 @@ namespace Mobile_Academic_App
         {
 
         }
+
+        private void btnAddOA_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddOA());
+        }
+
+        private void btnAddPA_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddPA());
+        }
     }
 }
