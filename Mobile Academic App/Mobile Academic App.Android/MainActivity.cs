@@ -18,11 +18,11 @@ namespace Mobile_Academic_App.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            string fileName = "academic_db.db3";                                                                // The name of the database
-            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);    // The folder path where the database will be stored
-            string completePath = Path.Combine(folderPath, fileName);                                           // The complete path to the database
+            //string fileName = "academic_db.db3";                                                                // The name of the database
+            //string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);    // The folder path where the database will be stored
+            //string completePath = Path.Combine(folderPath, fileName);                                           // The complete path to the database
 
-            LoadApplication(new App(completePath));
+            //LoadApplication(new App(completePath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
