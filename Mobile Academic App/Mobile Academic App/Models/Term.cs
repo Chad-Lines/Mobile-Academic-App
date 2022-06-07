@@ -10,7 +10,7 @@ namespace Mobile_Academic_App.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime EndDate { get; set; }
         public IEnumerable<Course> Courses { get; set; }
     }
 }
