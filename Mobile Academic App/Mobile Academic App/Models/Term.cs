@@ -7,7 +7,7 @@ namespace Mobile_Academic_App.Models
 {
     public class Term
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement, NotNull]
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

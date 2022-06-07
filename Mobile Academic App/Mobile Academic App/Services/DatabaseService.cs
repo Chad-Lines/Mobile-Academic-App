@@ -31,8 +31,7 @@ namespace Mobile_Academic_App.Services
                 await _db.CreateTableAsync<Models.Course>();
                 await _db.CreateTableAsync<Models.ObjectiveAssessment>();
                 await _db.CreateTableAsync<Models.PerformanceAssessment>();
-            }
-            
+            }            
         }
 
         #region Updating Terms
@@ -49,7 +48,16 @@ namespace Mobile_Academic_App.Services
 
         public static async Task AddTerm(DateTime startDate, DateTime endDate, IEnumerable<Models.Course> courses)
         {
+            await Init();                           // Calling the init method asynchronously
 
+            Models.Term term = new Models.Term();   // Creating the term
+
+            // Setting the term parameters...
+            term.StartDate = startDate;             
+            term.EndDate = endDate;
+            term.Courses = courses;
+                
+            await _db.InsertAsync(term);            // Adding the term to the database
         }
 
         public static async Task RemoveTerm(int id)
@@ -62,27 +70,25 @@ namespace Mobile_Academic_App.Services
         {
             await Init();                                                   // Calling the init method asynchronously
 
-            var TermQuery = await _db.Table<Models.Term>()                  // Querying the database for a Term...
+            var UpdateTermQuery = await _db.Table<Models.Term>()            // Querying the database for a Term...
                 .Where(i => i.Id == id)                                     // Where the ID is equal to the ID provided
                 .FirstOrDefaultAsync();                                     // Get the first result (there should be only one)
 
-            if (TermQuery == null)                                          // If the result is null, then...
+            if (UpdateTermQuery == null)                                    // If the result is null, then...
             {
                 Console.WriteLine("Term with id " + id + " not found");     // Write to the console
                 return;
             }
             else                                                            // If the result is NOT null, then...
             {
-                TermQuery.StartDate = startDate;                            // Set the result's variables according to what was 
-                TermQuery.EndDate = endDate;                                // provided when calling the function.
-                TermQuery.Courses = courses;
+                UpdateTermQuery.StartDate = startDate;                      // Set the result's variables according to what was 
+                UpdateTermQuery.EndDate = endDate;                          // provided when calling the function.
+                UpdateTermQuery.Courses = courses;
 
-                await _db.UpdateAsync(TermQuery);                           // Write the update to the database
+                await _db.UpdateAsync(UpdateTermQuery);                     // Write the update to the database
 
             }
         }
-
-
         #endregion
 
     }
