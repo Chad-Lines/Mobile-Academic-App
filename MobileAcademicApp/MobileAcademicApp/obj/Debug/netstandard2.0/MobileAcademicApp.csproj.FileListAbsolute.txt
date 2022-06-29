@@ -1,0 +1,15 @@
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\bin\Debug\netstandard2.0\MobileAcademicApp.deps.json
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\bin\Debug\netstandard2.0\MobileAcademicApp.dll
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\bin\Debug\netstandard2.0\MobileAcademicApp.pdb
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.csproj.AssemblyReference.cache
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.AssemblyInfoInputs.cache
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.AssemblyInfo.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.csproj.CoreCompileInputs.cache
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.dll
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\refint\MobileAcademicApp.dll
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.pdb
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\ref\MobileAcademicApp.dll

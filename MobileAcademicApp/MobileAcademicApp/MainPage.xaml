@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAcademicApp.MainPage">
+
+    <!-- ADD COURSE-->
+    
+    <StackLayout Margin="20, 20, 20, 0">
+        
+        <!-- Defining the fields we need to add a new course -->
+        <Entry Placeholder="Course Name" IsSpellCheckEnabled="false"/>
+        <Label Text="Start Date"/>
+        <DatePicker/>
+        <Label Text="End Date"/>
+        <DatePicker/>
+        <Picker Title="Course Status"/>
+        <Entry Placeholder="Instructor Name" IsSpellCheckEnabled="false"/>
+        <Entry Placeholder="Instructor Phone Number" Keyboard="Telephone"/>
+        <Entry Placeholder="Instructor Email" Keyboard="Email"/>
+        <Editor Placeholder="Notes" AutoSize="TextChanges"/>
+        
+        <!-- Saving the new course -->
+            <Button Text="Save Course" 
+                x:Name="saveCourseButton" 
+                Clicked="saveCourseButton_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

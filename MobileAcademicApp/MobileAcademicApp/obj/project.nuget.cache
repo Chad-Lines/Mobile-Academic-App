@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "G/JFxlEx2duEr3acHcqv1aMfYAS3V6+qTH1uT5KcUCix604hqFnS1RW9xgOukzSaqLxs+mVypfAfXRDDYT0LUA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chadl\\source\\repos\\Mobile-Academic-App\\MobileAcademicApp\\MobileAcademicApp\\MobileAcademicApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chadl\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\chadl\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\chadl\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\chadl\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\chadl\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
