@@ -642,9 +642,7 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\System.Memory.dll
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\Xamarin.Android.Support.v4.dll
-C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\jl\cf06155d-aa56-48b2-ac83-0d09d56e4841.jar
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\proguard\651a02d3-bbee-40eb-9f35-644e26fceccf.cfg
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\stamp\_AndroidXJetifyProguardRules.stamp
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\_AndroidXJetifyProguardRules.jetify
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\stamp\_AndroidXCecilfy.stamp
@@ -652,3 +650,5 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\stamp\_AndroidXJetifyManifest.stamp
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\_AndroidXJetifyManifest.jetify
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\stamp\_CopyIntermediateAssemblies.stamp
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\jl\58542d02-4050-4231-9e70-bf89313b9b64.jar
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\proguard\c3c0b542-4b2a-4919-a229-ab3efbf14236.cfg

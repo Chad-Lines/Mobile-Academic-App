@@ -15,9 +15,5 @@ namespace MobileAcademicApp
             InitializeComponent();
         }
 
-        private void saveCourseButton_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }

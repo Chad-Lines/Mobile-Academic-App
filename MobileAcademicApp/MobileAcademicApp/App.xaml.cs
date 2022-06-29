@@ -10,7 +10,7 @@ namespace MobileAcademicApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());  // Setting the navigation root to the main page
         }
 
         protected override void OnStart()

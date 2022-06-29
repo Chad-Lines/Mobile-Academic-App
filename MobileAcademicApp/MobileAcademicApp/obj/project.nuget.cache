@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CC511jhrg0Z1JoAgAdjRy2dNoudoO1sT/7gjJNXLHx3NbXRJgjXYziEVAnjqL5kk5fRMQk2wFFsipMaWlXRSxw==",
+  "dgSpecHash": "0nobEI2O59hH4W0IQ6kUpCu9rOoYUSvQqj5OwcLN87GfD9pCTddwmriug8thhIxvysmLR59C1lFYVw9CNNjB9w==",
   "success": true,
   "projectFilePath": "C:\\Users\\chadl\\source\\repos\\Mobile-Academic-App\\MobileAcademicApp\\MobileAcademicApp\\MobileAcademicApp.csproj",
   "expectedPackageFiles": [
@@ -16,8 +16,8 @@
     "C:\\Users\\chadl\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\chadl\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\chadl\\.nuget\\packages\\xam.plugins.notifier\\3.0.1\\xam.plugins.notifier.3.0.1.nupkg.sha512",
-    "C:\\Users\\chadl\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\chadl\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\chadl\\.nuget\\packages\\xamarin.essentials\\1.7.3\\xamarin.essentials.1.7.3.nupkg.sha512",
+    "C:\\Users\\chadl\\.nuget\\packages\\xamarin.forms\\5.0.0.2478\\xamarin.forms.5.0.0.2478.nupkg.sha512"
   ],
   "logs": []
 }
