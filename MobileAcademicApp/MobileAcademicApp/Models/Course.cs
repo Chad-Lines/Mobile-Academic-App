@@ -5,7 +5,7 @@ using SQLite;
 
 namespace MobileAcademicApp.Models
 {
-    internal class Course
+    public class Course
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
