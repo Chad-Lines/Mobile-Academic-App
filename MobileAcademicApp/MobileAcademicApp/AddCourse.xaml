@@ -16,7 +16,17 @@
         <DatePicker/>
         <Label Text="End Date"/>
         <DatePicker/>
-        <Picker Title="Course Status"/>
+
+        <Picker Title="Course Status">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Upcoming</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
         <Entry Placeholder="Instructor Name" IsSpellCheckEnabled="false"/>
         <Entry Placeholder="Instructor Phone Number" Keyboard="Telephone"/>
         <Entry Placeholder="Instructor Email" Keyboard="Email"/>

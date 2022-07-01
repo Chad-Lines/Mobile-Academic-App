@@ -244,9 +244,7 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.dll
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.pdb
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\android\assets\Xamarin.Google.Guava.ListenableFuture.dll
-C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\androidx\jl\e1e094e1-0fad-48e4-b31c-e4792ab798b5.jar
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\androidx\proguard\081b774e-88ef-4425-b461-6cdbbdb4ab66.cfg
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\stamp\_AndroidXJetifyProguardRules.stamp
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\androidx\_AndroidXJetifyProguardRules.jetify
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\stamp\_AndroidXCecilfy.stamp
@@ -652,4 +650,6 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\androidx\jl\313827f3-3837-49cc-a740-929e5300b182.jar
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\androidx\proguard\26129a21-0ead-4c31-93ad-2f52030baafb.cfg
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\110\android\assets\Plugin.LocalNotifications.pdb
