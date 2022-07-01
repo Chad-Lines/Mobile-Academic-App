@@ -9,6 +9,7 @@ namespace MobileAcademicApp.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        public int CourseId { get; set; }
         public string Name { get; set; }
         public DateTime DueDate { get; set; }
     }

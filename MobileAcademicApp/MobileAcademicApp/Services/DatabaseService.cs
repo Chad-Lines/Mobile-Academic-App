@@ -231,24 +231,70 @@ namespace MobileAcademicApp.Services
 
         #region ASSESSMENT OPERATIONS
         // GET ASSESSMENTS BY COURSE
-        public static async Task GetAssessmentsForCourse(int courseId)
+        public static async Task<IEnumerable<Models.Assessment>> GetAssessmentsForCourse(int courseId)
         {
+            // Initialize the database
+            await Init();
 
+            // Querying the database for the matching assessment
+            var assessments = await _db.Table<Models.Assessment>()  // Opening thd database                
+                .Where(i => i.CourseId == courseId)             // Looking for the ID
+                .ToListAsync();                                 // Getting the results as a list
+
+            // Return the list
+            return assessments;
         }
 
-        public static async Task AddAssessment()
+        // ADD ASSESSMENT
+        public static async Task AddAssessment(int courseId, string name, DateTime dueDate)
         {
+            // Initialize the database
+            await Init();
 
+            // Create the assessment based on all of the provided information
+            var assessment = new Models.Assessment
+            {
+                CourseId = courseId,
+                Name = name,
+                DueDate = dueDate
+            };
+
+            // Adding the course in the database
+            var id = await _db.InsertAsync(assessment);
         }
 
-        public static async Task RemoveAssessment()
+        // REMOVE ASSESSMENT
+        public static async Task RemoveAssessment(int id)
         {
+            // Initialize the database
+            await Init();
 
+            // Remove the assessment from the database
+            await _db.DeleteAsync<Models.Assessment>(id);
         }
-
-        public static async Task UpdateAssessment()
+        
+        // UPDATE ASSESSMENT
+        public static async Task UpdateAssessment(int id, int courseId, string name, DateTime dueDate)
         {
+            // Initialize the database
+            await Init();
 
+            // Querying the database for the matching assessment
+            // Opening the database
+            var assessmentQuery = await _db.Table<Models.Assessment>()
+              .Where(i => i.Id == id) // Looking for the ID			                   
+              .FirstOrDefaultAsync(); // Getting the first result 
+
+            // Update the assessment based on the information provided
+            if (assessmentQuery != null)
+            {
+                assessmentQuery.CourseId = courseId;
+                assessmentQuery.Name = name;
+                assessmentQuery.DueDate = dueDate;
+
+                // Updating the database with the new information
+                await _db.UpdateAsync(assessmentQuery);
+            };
         }
 
         #endregion
