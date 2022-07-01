@@ -21,5 +21,10 @@ namespace MobileAcademicApp
         {
 
         }
+
+        private void addAssessmentButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

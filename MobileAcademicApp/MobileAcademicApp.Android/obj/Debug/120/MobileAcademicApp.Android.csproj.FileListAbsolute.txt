@@ -632,7 +632,6 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\lp\105\jl\files.cache
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\Plugin.LocalNotifications.Abstractions.dll
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\Plugin.LocalNotifications.dll
-C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\Plugin.LocalNotifications.dll.mdb
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\SQLite-net.dll
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\SQLitePCLRaw.batteries_v2.dll
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\SQLitePCLRaw.core.dll
@@ -652,3 +651,4 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\stamp\_CopyIntermediateAssemblies.stamp
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\jl\58542d02-4050-4231-9e70-bf89313b9b64.jar
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\androidx\proguard\c3c0b542-4b2a-4919-a229-ab3efbf14236.cfg
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp.Android\obj\Debug\120\android\assets\Plugin.LocalNotifications.pdb

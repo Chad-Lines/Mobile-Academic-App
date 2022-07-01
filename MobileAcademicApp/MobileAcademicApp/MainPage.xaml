@@ -4,18 +4,22 @@
              x:Class="MobileAcademicApp.MainPage">
 
     <!-- TERM LIST -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" x:Name="New" Clicked="newTermButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <!-- The main content -->
     
     <StackLayout Margin="20, 20, 20, 0">
 
         <!-- The Label -->
         <Label Text="Terms" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
 
-        <!-- List of Existing Terms -->
-        <!-- These buttons are temporary -->
-        <Button Text="Term 1" />
-        <Button Text="Term 2" />
-        <Button Text="Term 3" />
-        <Button Text="Term 4" />
+        <!-- List of Existing Terms (This is temporary) -->
+        <Button Text="Term 1" x:Name="Term1Button" Clicked="Term1Button_Clicked"/>
+        <Button Text="Term 2" x:Name="Term2Button" Clicked="Term2Button_Clicked"/>
+        <Button Text="Term 3" x:Name="Term3Button" Clicked="Term3Button_Clicked"/>
+        <Button Text="Term 4" x:Name="Term4Button" Clicked="Term4Button_Clicked"/>
 
     </StackLayout>
 

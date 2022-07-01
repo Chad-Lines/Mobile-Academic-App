@@ -21,9 +21,20 @@
         <Entry Placeholder="Instructor Phone Number" Keyboard="Telephone"/>
         <Entry Placeholder="Instructor Email" Keyboard="Email"/>
         <Editor Placeholder="Notes" AutoSize="TextChanges"/>
+        
+        <!-- Adding an Assessment-->
+        <Label Text="Assessments" FontSize="Medium" FontAttributes="Bold"/>
+        
+            <!-- Add list of existing assessments-->
+
+        <Button Text="Add Assessment"
+                x:Name="addAssessmentButton"
+                Clicked="addAssessmentButton_Clicked"/>
 
         <!-- Saving the new course -->
         <Button Text="Save Course" 
+                BackgroundColor="DodgerBlue"
+                TextColor="White"
                 x:Name="saveCourseButton" 
                 Clicked="saveCourseButton_Clicked"/>
 

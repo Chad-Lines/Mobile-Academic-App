@@ -14,3 +14,6 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\MobileAcademicApp.pdb
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\ref\MobileAcademicApp.dll
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\AddCourse.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\AddTerm.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\CourseView.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\TermView.xaml.g.cs
