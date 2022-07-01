@@ -15,34 +15,33 @@ namespace MobileAcademicApp
             InitializeComponent();
         }
 
-        private void newTermButton_Clicked(object sender, EventArgs e)
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // When the page loads, update the list of terms
+            termsCollectionView.ItemsSource = await Services.DatabaseService.GetAllTerms();
+        }
+
+        private async void newTermButton_Clicked(object sender, EventArgs e)
         {
             // When the "New" button is clicked, we navigate to the Add Term page
-            Navigation.PushAsync(new AddTerm());    
+            await Navigation.PushAsync(new AddTerm());    
         }
 
-        #region ComeBackTo
-        private void Term1Button_Clicked(object sender, EventArgs e)
+        private async void termsCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // When the user selects a term to view, we transitiont to the appropriate page
 
+            if (e.CurrentSelection == null)                                             // If the selection is invalid...
+            {
+                return;                                                                 // Simply return
+            }
+            else                                                                        // Otherwise...
+            {
+                Models.Term term = (Models.Term)e.CurrentSelection.FirstOrDefault();    // Load the term
+                await Navigation.PushAsync(new EditTerm(term));                         // Navigate to the edit term page
+            }
         }
-
-        private void Term2Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Term3Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Term4Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
-
     }
 }

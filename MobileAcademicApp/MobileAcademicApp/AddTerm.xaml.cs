@@ -17,9 +17,11 @@ namespace MobileAcademicApp
             InitializeComponent();
         }
 
-        private void saveTermButton_Clicked(object sender, EventArgs e)
+        private async void saveTermButton_Clicked(object sender, EventArgs e)
         {
-
+            // Updating the database with the user-provided information
+            await Services.DatabaseService.AddTerm(termName.Text, termStartDate.Date, termEndDate.Date);
+            await Shell.Current.GoToAsync("..");
         }
 
         private void addNewCourseButton_Clicked(object sender, EventArgs e)
@@ -27,5 +29,19 @@ namespace MobileAcademicApp
             // When the "Add New Course" button is clicked, we navigate to the Add Course page
             Navigation.PushAsync(new AddCourse());
         }
+
+        #region TOOLBAR ITEMS
+        private void saveTermToolbar_Clicked(object sender, EventArgs e)
+        {
+            // Just pass through to the save button
+            saveTermButton_Clicked((object)sender, new EventArgs());
+        }
+
+        private async void cancelTermToolbar_Clicked(object sender, EventArgs e)
+        {
+            // Return to the previous page
+            await Shell.Current.GoToAsync("..");
+        }
+        #endregion
     }
 }

@@ -1,21 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAcademicApp.AddTerm">
+             x:Class="MobileAcademicApp.AddTerm"
+             Title="Add Term">
     
-    <!-- ADD TERM -->
+        <!-- ADD TERM -->
 
-    <StackLayout Margin="20, 20, 20, 0">
+        <!-- The toolbar -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" x:Name="saveTermToolbar" Clicked="saveTermToolbar_Clicked"></ToolbarItem>
+        <ToolbarItem Text="Cancel" x:Name="cancelTermToolbar" Clicked="cancelTermToolbar_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+        <StackLayout Margin="20, 20, 20, 0">
 
         <!-- The Add Term Label -->
         <Label Text="Add Term" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
 
         <!-- Defining the fields we need to add a new term -->
-        <Entry Placeholder="Term Name" IsSpellCheckEnabled="false"/>
+        <Entry Placeholder="Term Name" IsSpellCheckEnabled="false" x:Name="termName"/>
         <Label Text="Start Date"/>
-        <DatePicker/>
+        <DatePicker x:Name="termStartDate"/>
         <Label Text="End Date"/>
-        <DatePicker/>
+        <DatePicker x:Name="termEndDate"/>
         
         <!-- Show already added courses (TODO) -->
         

@@ -18,6 +18,5 @@ namespace MobileAcademicApp.Models
         public string InstructorPhoneNumber { get; set; }
         public string InstructorEmail { get; set; }
         public string Notes { get; set; }
-        public List<Assessment> Assessments { get; set; }
     }
 }

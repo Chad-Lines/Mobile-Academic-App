@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAcademicApp.AddAssessment">
+             x:Class="MobileAcademicApp.AddAssessment"
+             Title="Add Assessment">
 
     <!-- ADD ASSESSMENT -->
 
@@ -11,10 +12,10 @@
         <Label Text="Add Assessment" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
 
         <!-- Defining the fields we need to add a new course -->
-        <Entry Placeholder="Assessment Name" IsSpellCheckEnabled="false"/>
+        <Entry Placeholder="Assessment Name" IsSpellCheckEnabled="false" x:Name="assessmentName"/>
         <Label Text="Due Date"/>
-        <DatePicker/>
-        <Picker Title="Assessment Type">
+        <DatePicker x:Name="assessmentDueDate"/>
+        <Picker Title="Assessment Type" x:Name="assessmentType">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Performance</x:String>

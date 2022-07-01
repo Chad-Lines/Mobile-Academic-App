@@ -30,7 +30,7 @@
     <EmbeddedResource Update="CourseView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TermView.xaml">
+    <EmbeddedResource Update="EditTerm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

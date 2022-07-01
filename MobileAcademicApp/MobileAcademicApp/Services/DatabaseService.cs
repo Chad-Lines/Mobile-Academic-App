@@ -37,8 +37,105 @@ namespace MobileAcademicApp.Services
                 return;
             }
 
-            
+            if (GetAllTerms() == null)
+            {
+                // If there are no current terms, we create the default one
+                await AddTerm("Default Term", DateTime.Parse("01/01/2000"), DateTime.Parse("12/31/2000"));
+                await AddCourse(0, "Default Course", DateTime.Parse("01/01/2000"), DateTime.Parse("12/31/2000"),
+                        "Completed", "John Doe", "3608012530", "john.doe@school.edu", "");
+                await AddAssessment(0, "DefaultAssessment", "Performance", DateTime.Parse("12/31/2000"));
+            }
+            else
+            {
+                // If there ARE terms, then we just return
+                return;
+            }            
         }
+
+
+        #region TERM OPERATIONS
+
+        // GET ALL TERMS
+        public static async Task<IEnumerable<Models.Term>> GetAllTerms()
+        {
+            // Initialize the database
+            await Init();
+
+            // Getting the list of all terms from the database
+            var terms = await _db.Table<Models.Term>().ToListAsync();
+
+            // Return the terms
+            return terms;
+        }
+
+        // GET TERM BY ID
+        public static async Task<Models.Term> GetTermByID(int id)
+        {
+            // Initialize the database
+            await Init();
+
+            // Search for the term by term Id
+            var term = await _db.Table<Models.Term>()
+                .Where(i => i.Id == id)
+                .FirstOrDefaultAsync();
+
+            // Return the term
+            return term;
+        }
+
+        // ADD TERM
+        public static async Task AddTerm(string name, DateTime startDate, DateTime endDate)
+        {
+            // Initialize the database
+            await Init();
+
+            // Create the term based on all of the provided information
+            var term = new Models.Term
+            {
+                Name = name,
+                StartDate = startDate,
+                EndDate = endDate
+            };
+
+            // Adding the term in the database
+            var id = await _db.InsertAsync(term);
+        }
+
+        // REMOVE TERM
+        public static async Task RemoveTerm(int id)
+        {
+            // Initialize the database
+            await Init();
+
+            // Remove the course from the database
+            await _db.DeleteAsync<Models.Term>(id);
+        }
+
+        // UPDATE TERM
+        public static async Task UpdateTerm(int id, string name, DateTime startDate, DateTime endDate)
+        {
+            // Initialize the database
+            await Init();
+
+            // Querying the database for the matching term
+            // Opening the database
+            var termQuery = await _db.Table<Models.Term>()
+              .Where(i => i.Id == id) // Looking for the ID			                   
+              .FirstOrDefaultAsync(); // Getting the first result   
+
+            // Update the term based on all of the provided information
+            if (termQuery != null)
+            {
+                termQuery.Name = name;
+                termQuery.StartDate = startDate;
+                termQuery.EndDate = endDate;
+
+                // Updating the database with the new information
+                await _db.UpdateAsync(termQuery);
+            }
+        }
+
+        #endregion
 
         #region COURSE OPERATIONS
 
@@ -74,8 +171,7 @@ namespace MobileAcademicApp.Services
 
         // ADD COURSE
         public static async Task AddCourse(int termId, string name, DateTime startDate, DateTime endDate, string status, 
-            string instructorName, string instructorPhoneNumber, string instructorEmail, string notes, 
-            List<Models.Assessment> assessments)
+            string instructorName, string instructorPhoneNumber, string instructorEmail, string notes)
         {
             // Initialize the database
             await Init();
@@ -92,7 +188,6 @@ namespace MobileAcademicApp.Services
                 InstructorPhoneNumber = instructorPhoneNumber,
                 InstructorEmail = instructorEmail,
                 Notes = notes,
-                Assessments = assessments
             };
 
             // Adding the course in the database
@@ -111,8 +206,7 @@ namespace MobileAcademicApp.Services
 
         // UPDATE COURSE
         public static async Task UpdateCourse(int id, int termId, string name, DateTime startDate, DateTime endDate, string status,
-            string instructorName, string instructorPhoneNumber, string instructorEmail, string notes,
-            List<Models.Assessment> assessments)
+            string instructorName, string instructorPhoneNumber, string instructorEmail, string notes)
         {
             // Initialize the database
             await Init();
@@ -134,97 +228,10 @@ namespace MobileAcademicApp.Services
                 courseQuery.InstructorPhoneNumber = instructorPhoneNumber;
                 courseQuery.InstructorEmail = instructorEmail;
                 courseQuery.Notes = notes;
-                courseQuery.Assessments = assessments;
 
                 // Updating the database with the new information
                 await _db.UpdateAsync(courseQuery);
             };
-        }
-
-        #endregion
-
-        #region TERM OPERATIONS
-
-        // GET ALL TERMS
-        public static async Task<IEnumerable<Models.Term>> GetAllTerms()
-        {
-            // Initialize the database
-            await Init();
-
-            // Getting the list of all terms from the database
-            var terms = await _db.Table<Models.Term>().ToListAsync();
-
-            // Return the terms
-            return terms;
-        }
-
-        // GET TERM BY ID
-        public static async Task<Models.Term> GetTermByID(int id)
-        {
-            // Initialize the database
-            await Init();
-
-            // Search for the term by term Id
-            var term = await _db.Table<Models.Term>()
-                .Where(i => i.Id == id)
-                .FirstOrDefaultAsync();
-
-            // Return the term
-            return term;
-        }
-
-        // ADD TERM
-        public static async Task AddTerm(string name, DateTime startDate, DateTime endDate, List<Models.Course> courses)
-        {
-            // Initialize the database
-            await Init();
-
-            // Create the term based on all of the provided information
-            var term = new Models.Term
-            {
-                Name = name,
-                StartDate = startDate,
-                EndDate = endDate,
-                Courses = courses
-            };
-
-            // Adding the term in the database
-            var id = await _db.InsertAsync(term);
-        }
-
-        // REMOVE TERM
-        public static async Task RemoveTerm(int id)
-        {
-            // Initialize the database
-            await Init();
-
-            // Remove the course from the database
-            await _db.DeleteAsync<Models.Term>(id);
-        }
-
-        // UPDATE TERM
-        public static async Task UpdateTerm(int id, string name, DateTime startDate, DateTime endDate, List<Models.Course> courses)
-        {
-            // Initialize the database
-            await Init();
-
-            // Querying the database for the matching term
-            // Opening the database
-            var termQuery = await _db.Table<Models.Term>()
-              .Where(i => i.Id == id) // Looking for the ID			                   
-              .FirstOrDefaultAsync(); // Getting the first result   
-
-            // Update the term based on all of the provided information
-            if (termQuery != null)
-            {
-                termQuery.Name = name;
-                termQuery.StartDate = startDate;
-                termQuery.EndDate = endDate;
-                termQuery.Courses = courses;
-
-                // Updating the database with the new information
-                await _db.UpdateAsync(termQuery);
-            }
         }
 
         #endregion
@@ -246,7 +253,7 @@ namespace MobileAcademicApp.Services
         }
 
         // ADD ASSESSMENT
-        public static async Task AddAssessment(int courseId, string name, DateTime dueDate)
+        public static async Task AddAssessment(int courseId, string name, string type, DateTime dueDate)
         {
             // Initialize the database
             await Init();
@@ -256,6 +263,7 @@ namespace MobileAcademicApp.Services
             {
                 CourseId = courseId,
                 Name = name,
+                Type = type,
                 DueDate = dueDate
             };
 
@@ -274,7 +282,7 @@ namespace MobileAcademicApp.Services
         }
         
         // UPDATE ASSESSMENT
-        public static async Task UpdateAssessment(int id, int courseId, string name, DateTime dueDate)
+        public static async Task UpdateAssessment(int id, int courseId, string name, string type, DateTime dueDate)
         {
             // Initialize the database
             await Init();
@@ -290,6 +298,7 @@ namespace MobileAcademicApp.Services
             {
                 assessmentQuery.CourseId = courseId;
                 assessmentQuery.Name = name;
+                assessmentQuery.Type = type;
                 assessmentQuery.DueDate = dueDate;
 
                 // Updating the database with the new information

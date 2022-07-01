@@ -25,7 +25,8 @@ namespace MobileAcademicApp
         private void addAssessmentButton_Clicked(object sender, EventArgs e)
         {
             // When the "Add Assessment" button is clicked, we navigate to the Add Assessment page
-            Navigation.PushAsync(new AddAssessment());
+            // TODO: PASS THE COURSEID
+            Navigation.PushAsync(new AddAssessment(0));
         }
     }
 }

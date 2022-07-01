@@ -1,26 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAcademicApp.MainPage">
+             x:Class="MobileAcademicApp.MainPage"
+             Title="Academic Tracker">
 
     <!-- TERM LIST -->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="New" x:Name="New" Clicked="newTermButton_Clicked"/>
+        <ToolbarItem Text="Add" x:Name="New" Clicked="newTermButton_Clicked"/>
     </ContentPage.ToolbarItems>
     
-    <!-- The main content -->
-    
-    <StackLayout Margin="20, 20, 20, 0">
-
-        <!-- The Label -->
-        <Label Text="Terms" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-
-        <!-- List of Existing Terms (This is temporary) -->
-        <Button Text="Term 1" x:Name="Term1Button" Clicked="Term1Button_Clicked"/>
-        <Button Text="Term 2" x:Name="Term2Button" Clicked="Term2Button_Clicked"/>
-        <Button Text="Term 3" x:Name="Term3Button" Clicked="Term3Button_Clicked"/>
-        <Button Text="Term 4" x:Name="Term4Button" Clicked="Term4Button_Clicked"/>
-
-    </StackLayout>
+    <!-- Display the terms in a list
+         - {Binding Models.Term} defines the datamodel to bind to (i.e. what to show)
+         - The CollectionView.ItemsLayout defines how the items will appear -->
+    <CollectionView
+        x:Name="termsCollectionView"
+        ItemsSource="{Binding Models.Term}" 
+        EmptyView="Term list is empty"
+        SelectionMode="Single"
+        SelectionChanged="termsCollectionView_SelectionChanged"
+        >
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+        </CollectionView.ItemsLayout>
+        
+    </CollectionView>
 
 </ContentPage>
