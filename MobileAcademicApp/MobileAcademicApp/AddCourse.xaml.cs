@@ -12,9 +12,12 @@ namespace MobileAcademicApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddCourse : ContentPage
     {
-        public AddCourse()
+        Models.Term _term;
+
+        public AddCourse(Models.Term term)
         {
             InitializeComponent();
+            _term = term;
         }
 
         private void saveCourseButton_Clicked(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace MobileAcademicApp
         private void addAssessmentButton_Clicked(object sender, EventArgs e)
         {
             // When the "Add Assessment" button is clicked, we navigate to the Add Assessment page
-            // TODO: PASS THE COURSEID
+            // TODO: PASS THE COURSE ID
             Navigation.PushAsync(new AddAssessment(0));
         }
     }

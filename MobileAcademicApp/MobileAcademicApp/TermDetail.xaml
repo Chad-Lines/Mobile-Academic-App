@@ -1,12 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAcademicApp.TermDetail">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="MobileAcademicApp.TermDetail"
+             Title="Term Details">
+
+    <!-- TERM DETAIL -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" x:Name="Edit" Clicked="editTermButton_Clicked"/>
+        <ToolbarItem Text="Delete" x:Name="Delete" Clicked="deleteTermButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Margin="20,20,20,0">
+        <!-- The Term Label -->
+        <Label FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" x:Name="termName"/>
+        
+        <!-- Displaying the date ranges -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label FontSize="Medium" x:Name="termStartDate"/>
+            <Label Text="-" FontSize="Medium"/>
+            <Label FontSize="Medium" x:Name="termEndDate"/>
         </StackLayout>
-    </ContentPage.Content>
+
+        <!-- Courses label -->
+        <Label Text="Courses" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+        <!-- Showing a message if there are no courses -->
+        <Label Text="There are no courses in this term" HorizontalTextAlignment="Center" FontSize="Small" HorizontalOptions="Center" x:Name="noCourseLabel"/>
+
+        <!-- Showing the list of courses -->
+        <ListView x:Name="courseListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Name}"/>
+                        <Label Text="{Binding Status}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+
+
+
+
 </ContentPage>

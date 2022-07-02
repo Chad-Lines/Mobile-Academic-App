@@ -1,12 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileAcademicApp.EditTerm">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="MobileAcademicApp.EditTerm"
+             Title="Edit Term">
+
+    <!-- EDIT TERM -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" x:Name="Save" Clicked="saveTermButton_Clicked"/>
+        <ToolbarItem Text="Cancel" x:Name="Cancel" Clicked="cancelButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout Margin="20, 20, 20, 0">
+
+        <!-- Defining the fields we need to add a new term -->
+        <Entry Placeholder="Term Name" IsSpellCheckEnabled="false" x:Name="termName"/>
+        <Label Text="Start Date"/>
+        <DatePicker x:Name="termStartDate"/>
+        <Label Text="End Date"/>
+        <DatePicker x:Name="termEndDate"/>
+
+        <!-- Courses label -->
+        <Label Text="Courses" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+        <!-- Allow the user to add a new course to the term -->
+        <Button Text="Add New Course" x:Name="addNewCourseButton" Clicked="addNewCourseButton_Clicked"/>
+
+        <!-- Showing a message if there are no courses -->
+        <Label Text="There are no courses in this term" HorizontalTextAlignment="Center" FontSize="Small" HorizontalOptions="Center" x:Name="noCourseLabel"/>
+        
+        <!-- Showing the list of courses -->
+        <ListView x:Name="courseListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Name}"/>
+                        <Label Text="{Binding Status}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
 </ContentPage>

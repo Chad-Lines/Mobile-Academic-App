@@ -40,7 +40,7 @@ namespace MobileAcademicApp
             else                                                                        // Otherwise...
             {
                 Models.Term term = (Models.Term)e.CurrentSelection.FirstOrDefault();    // Load the term
-                await Navigation.PushAsync(new EditTerm(term));                         // Navigate to the edit term page
+                await Navigation.PushAsync(new TermDetail(term));                       // Navigate to the edit term page
             }
         }
     }

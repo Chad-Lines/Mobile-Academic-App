@@ -52,7 +52,6 @@ namespace MobileAcademicApp.Services
             }            
         }
 
-
         #region TERM OPERATIONS
 
         // GET ALL TERMS
