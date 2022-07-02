@@ -21,7 +21,7 @@ namespace MobileAcademicApp
         {
             // Updating the database with the user-provided information
             await Services.DatabaseService.AddTerm(termName.Text, termStartDate.Date, termEndDate.Date);
-            await Shell.Current.GoToAsync("..");
+            await Navigation.PushAsync(new MainPage());
         }
 
         private void addNewCourseButton_Clicked(object sender, EventArgs e)
