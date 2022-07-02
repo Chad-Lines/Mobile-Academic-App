@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace MobileAcademicApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CourseView : ContentPage
+    public partial class TermDetail : ContentPage
     {
-        public CourseView()
+        public TermDetail()
         {
             InitializeComponent();
         }
