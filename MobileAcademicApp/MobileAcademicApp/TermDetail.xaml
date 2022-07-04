@@ -23,14 +23,12 @@
 
         <!-- Courses label -->
         <Label Text="Courses" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-
-        <!-- Showing a message if there are no courses -->
-        <Label Text="There are no courses in this term" HorizontalTextAlignment="Center" FontSize="Small" HorizontalOptions="Center" x:Name="noCourseLabel"/>
-
+        
+        <!-- Course list -->
         <CollectionView
         x:Name="coursesCollectionView"
         ItemsSource="{Binding Models.Course}" 
-        EmptyView="Term list is empty"
+        EmptyView="Course list is empty"
         SelectionMode="Single"
         SelectionChanged="coursesCollectionView_SelectionChanged"
         >
@@ -66,11 +64,11 @@
                             "Grid.Row="1" sets the location within the grid as row 1 -->
                             <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center">
                                 <!-- We format the dates so that we ONLY have the dates and not the times as well -->
-                                <Label Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
+                            <Label Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
                             Text="{Binding StartDate, StringFormat='{}{0:MM/dd/yyyy}'}"/>
                                 <!-- Just a basic separator -->
-                                <Label Text="-" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                <Label Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
+                            <Label Text="-" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
                             Text="{Binding EndDate, StringFormat='{}{0:MM/dd/yyyy}'}"/>
                             </StackLayout>
 

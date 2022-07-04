@@ -38,8 +38,7 @@ namespace MobileAcademicApp
             }
             else                                                                        // Otherwise...
             {
-                noCourseLabel.IsVisible = false;                                        // Hide the "no courses" label
-                coursesCollectionView.ItemsSource = courses;                                   // Send the courses as the reference for the course list
+                coursesCollectionView.ItemsSource = courses;                            // Send the courses as the reference for the course list
             }
 
         }
@@ -57,9 +56,19 @@ namespace MobileAcademicApp
             await Navigation.PushAsync(new MainPage());             // Navigate back to the main page
         }
 
-        private void coursesCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void coursesCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // When the user selects a term to view, we transitiont to the appropriate page
 
+            if (e.CurrentSelection == null)                                                 // If the selection is invalid...
+            {
+                return;                                                                     // Simply return
+            }
+            else                                                                            // Otherwise...
+            {
+                Models.Course course = (Models.Course)e.CurrentSelection.FirstOrDefault();  // Load the term
+                await Navigation.PushAsync(new CourseDetail(course));                       // Navigate to the edit term page
+            }
         }
     }
 }
