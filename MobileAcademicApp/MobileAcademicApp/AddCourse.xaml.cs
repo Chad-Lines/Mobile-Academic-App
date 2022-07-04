@@ -36,13 +36,6 @@ namespace MobileAcademicApp
 
             // Navigate back to the term detail page
             await Navigation.PushAsync(new TermDetail(_term));
-        }
-
-        private void addAssessmentButton_Clicked(object sender, EventArgs e)
-        {
-            // When the "Add Assessment" button is clicked, we navigate to the Add Assessment page
-            // TODO: PASS THE COURSE ID
-            //Navigation.PushAsync(new AddAssessment(course.Id));
-        }
+        }        
     }
 }

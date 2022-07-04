@@ -28,6 +28,8 @@ namespace MobileAcademicApp
             termStartDate.Text = _term.StartDate.ToString("MM/dd/yy");                  // Setting the start date label
             termEndDate.Text = _term.EndDate.ToString("MM/dd/yy");                      // Setting the end date label
 
+            //coursesCollectionView.ItemsSource = await Services.DatabaseService.GetCoursesForTerm(_term.Id);
+
             var courses = await Services.DatabaseService.GetCoursesForTerm(_term.Id);   // Getting a list of associated courses
 
             if (courses == null)                                                        // If there are no courses...
@@ -37,9 +39,9 @@ namespace MobileAcademicApp
             else                                                                        // Otherwise...
             {
                 noCourseLabel.IsVisible = false;                                        // Hide the "no courses" label
-                courseListView.ItemsSource = courses;                                   // Send the courses as the reference for the course list
+                coursesCollectionView.ItemsSource = courses;                                   // Send the courses as the reference for the course list
             }
-            
+
         }
 
         private async void editTermButton_Clicked(object sender, EventArgs e)
@@ -53,6 +55,11 @@ namespace MobileAcademicApp
         {
             await Services.DatabaseService.RemoveTerm(_term.Id);    // Remove the current Term
             await Navigation.PushAsync(new MainPage());             // Navigate back to the main page
+        }
+
+        private void coursesCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

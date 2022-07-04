@@ -27,6 +27,59 @@
         <!-- Showing a message if there are no courses -->
         <Label Text="There are no courses in this term" HorizontalTextAlignment="Center" FontSize="Small" HorizontalOptions="Center" x:Name="noCourseLabel"/>
 
+        <CollectionView
+        x:Name="coursesCollectionView"
+        ItemsSource="{Binding Models.Course}" 
+        EmptyView="Term list is empty"
+        SelectionMode="Single"
+        SelectionChanged="coursesCollectionView_SelectionChanged"
+        >
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Grid Padding="5" RowSpacing="1" ColumnSpacing="22" BackgroundColor="WhiteSmoke">
+
+                            <!-- Defining the grid row heights -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Defining the grid row widths -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Defining the formatting for the Course name. This is the first row (Grid.Row="0") -->
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" VerticalOptions="Center" FontAttributes="Bold"
+                            Text="{Binding Name}"/>
+
+                            <!-- Formatting the date range as "DATE - DATE". We use StackLayout to stack these labels horizontally.
+                            "Grid.Row="1" sets the location within the grid as row 1 -->
+                            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center">
+                                <!-- We format the dates so that we ONLY have the dates and not the times as well -->
+                                <Label Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
+                            Text="{Binding StartDate, StringFormat='{}{0:MM/dd/yyyy}'}"/>
+                                <!-- Just a basic separator -->
+                                <Label Text="-" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label Grid.Column="0" FontSize="Small" VerticalOptions="Center" 
+                            Text="{Binding EndDate, StringFormat='{}{0:MM/dd/yyyy}'}"/>
+                            </StackLayout>
+
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
         <!-- Showing the list of courses -->
         <ListView x:Name="courseListView">
             <ListView.ItemTemplate>

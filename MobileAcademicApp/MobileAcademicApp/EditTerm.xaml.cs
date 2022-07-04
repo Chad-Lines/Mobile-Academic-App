@@ -37,10 +37,9 @@ namespace MobileAcademicApp
             else                                                                        // Otherwise...
             {
                 noCourseLabel.IsVisible = false;                                        // Hide the "no courses" label
-                courseListView.ItemsSource = courses;                                   // Send the courses as the reference for the course list
+                coursesCollectionView.ItemsSource = courses;                                   // Send the courses as the reference for the course list
             }
         }
-
         private async void saveTermButton_Clicked(object sender, EventArgs e)
         {
             // Creating a term object based on user input
@@ -64,6 +63,11 @@ namespace MobileAcademicApp
         {
             // Go to the New Course screen
             await Navigation.PushAsync(new AddCourse(_term));
+        }
+
+        private void coursesCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
