@@ -43,8 +43,16 @@ namespace MobileAcademicApp
 
         private async void saveTermButton_Clicked(object sender, EventArgs e)
         {
+            // Creating a term object based on user input
+            Models.Term updatedTerm = new Models.Term();
+            updatedTerm.Name = termName.Text;
+            updatedTerm.StartDate = termStartDate.Date;
+            updatedTerm.EndDate = termEndDate.Date;
+
             // Updating the database with the user-provided information
-            await Services.DatabaseService.UpdateTerm(_term.Id, termName.Text, termStartDate.Date, termEndDate.Date);
+            await Services.DatabaseService.UpdateTerm(_term.Id, updatedTerm);
+
+            // Navigating back to the main page
             await Navigation.PushAsync(new MainPage());
         }
         private async void cancelButton_Clicked(object sender, EventArgs e)

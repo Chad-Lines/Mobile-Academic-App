@@ -15,25 +15,17 @@ namespace MobileAcademicApp
         public AddTerm()
         {
             InitializeComponent();
-            addNewCourseButton.IsVisible = false;
         }
 
         private async void saveTermButton_Clicked(object sender, EventArgs e)
-        {
-            // Updating the database with the user-provided information
-            await Services.DatabaseService.AddTerm(termName.Text, termStartDate.Date, termEndDate.Date);
-            await Navigation.PushAsync(new MainPage());
-            addNewCourseButton.IsVisible = true;
-        }
-
-        private void addNewCourseButton_Clicked(object sender, EventArgs e)
-        {
-            Models.Term _term = new Models.Term();
-
-
-            // When the "Add New Course" button is clicked, we navigate to the Add Course page
-            // ******************* THIS IS GOING TO CAUSE PROBLEMS *******************
-            Navigation.PushAsync(new AddCourse(_term));
+        {            
+            Models.Term term = new Models.Term();           // Create a new term object
+            term.Name = termName.Text;                      // Sett the parameters per user input
+            term.StartDate = termStartDate.Date;
+            term.EndDate = termEndDate.Date;
+            
+            await Services.DatabaseService.AddTerm(term);   // Updating the database with the user-provided information
+            await Navigation.PushAsync(new MainPage());     // Navigate back to the main page
         }
 
         #region TOOLBAR ITEMS

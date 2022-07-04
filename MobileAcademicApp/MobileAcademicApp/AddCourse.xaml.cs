@@ -17,19 +17,32 @@ namespace MobileAcademicApp
         public AddCourse(Models.Term term)
         {
             InitializeComponent();
+
+            // Capturing the term
             _term = term;
         }
 
-        private void saveCourseButton_Clicked(object sender, EventArgs e)
+        private async void saveCourseButton_Clicked(object sender, EventArgs e)
         {
+            // Create a new course object based on user input
+            Models.Course course = new Models.Course();
+            course.TermId = _term.Id;
+            course.Name = courseName.Text;
+            course.StartDate = startDate.Date;
+            course.EndDate = endDate.Date;
 
+            // Add the course to the database
+            await Services.DatabaseService.AddCourse(course);
+
+            // Navigate back to the term detail page
+            await Navigation.PushAsync(new TermDetail(_term));
         }
 
         private void addAssessmentButton_Clicked(object sender, EventArgs e)
         {
             // When the "Add Assessment" button is clicked, we navigate to the Add Assessment page
             // TODO: PASS THE COURSE ID
-            Navigation.PushAsync(new AddAssessment(0));
+            //Navigation.PushAsync(new AddAssessment(course.Id));
         }
     }
 }

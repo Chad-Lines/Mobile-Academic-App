@@ -25,12 +25,6 @@
         <Label Text="End Date"/>
         <DatePicker x:Name="termEndDate"/>
         
-        <!-- Show already added courses (TODO) -->
-        
-        
-        <!-- Allow the user to add a new course to the term -->
-        <Button Text="Add New Course" x:Name="addNewCourseButton" Clicked="addNewCourseButton_Clicked"/>
-
         <!-- Saving the new term -->
         <Button Text="Save" 
                 BackgroundColor="DodgerBlue"
