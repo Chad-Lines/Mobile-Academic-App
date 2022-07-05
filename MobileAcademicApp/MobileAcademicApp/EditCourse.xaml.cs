@@ -75,12 +75,13 @@ namespace MobileAcademicApp
 
         private async void assessmentsCollectionView_SelectionChanged(object sender, EventArgs e)
         {
-            // GO TO ASSESSMENT DETAIL
+
         }
 
-        private void addNewAssessmentButton_Clicked(object sender, EventArgs e)
+        private async void addNewAssessmentButton_Clicked(object sender, EventArgs e)
         {
-            // GO TO ADD ASSESSMENT
+            // Navigate to the add assessment page
+            await Navigation.PushAsync(new AddAssessment(_course));
         }
     }
 }

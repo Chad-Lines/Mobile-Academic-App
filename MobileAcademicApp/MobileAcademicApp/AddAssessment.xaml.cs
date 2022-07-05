@@ -13,20 +13,34 @@ namespace MobileAcademicApp
     public partial class AddAssessment : ContentPage
     {
         
-        int _courseId;              // This is the course to which this assessment will belong, by default
+        Models.Course _course;      // This is the course to which this assessment will belong, by default
 
-        public AddAssessment(int courseId)
+        public AddAssessment(Models.Course course)
         {
             InitializeComponent();  // Initializing
-            _courseId = courseId;   // Setting the course ID
+            _course = course;       // Setting the associated course
         }
 
-        private async void saveAssessmentButton_Clicked(object sender, EventArgs e)
+        private async void Save_Clicked(object sender, EventArgs e)
         {
-            // Updating the database with the user-provided information (and the _courseId)
-            await Services.DatabaseService.AddAssessment(_courseId, assessmentName.Text, 
-                assessmentType.SelectedItem.ToString(), assessmentDueDate.Date);
-            await Shell.Current.GoToAsync("..");
+            // Create the new model based on user input
+            Models.Assessment assessment = new Models.Assessment();
+            assessment.CourseId = _course.Id;
+            assessment.Name = assessmentName.Text;
+            assessment.DueDate = assessmentDueDate.Date;
+            assessment.Type = assessmentType.SelectedItem.ToString();
+
+            // Adding the assessment to the database
+            await Services.DatabaseService.AddAssessment(assessment);
+
+            // Navigate back to the course detail page
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        private async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            // Navigate back to the course detail page
+            await Navigation.PushAsync(new CourseDetail(_course));
         }
     }
 }

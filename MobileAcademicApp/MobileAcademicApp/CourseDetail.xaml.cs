@@ -67,15 +67,15 @@ namespace MobileAcademicApp
         {
             // When the user selects an assessment to view, we transitiont to the appropriate page
 
-            //if (e.CurrentSelection == null)                                                             // If the selection is invalid...
-            //{
-            //    return;                                                                                 // Simply return
-            //}
-            //else                                                                                        // Otherwise...
-            //{
-            //    Models.Assessment assessment = (Models.Assessment)e.CurrentSelection.FirstOrDefault();  // Load the term
-            //    await Navigation.PushAsync(new AssessmentDetail(assessment));                           // Navigate to the edit term page
-            //}
+            if (e.CurrentSelection == null)                                                             // If the selection is invalid...
+            {
+                return;                                                                                 // Simply return
+            }
+            else                                                                                        // Otherwise...
+            {
+                Models.Assessment assessment = (Models.Assessment)e.CurrentSelection.FirstOrDefault();  // Load the term
+                await Navigation.PushAsync(new AssessmentDetail(assessment));                           // Navigate to the edit assessment page
+            }
         }
     }
 }

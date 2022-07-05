@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("MobileAcademicApp.AddAssessment.xaml", "AddAssessment.xaml", typeof(global::MobileAcademicApp.AddAssessment))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("MobileAcademicApp.EditAssessment.xaml", "EditAssessment.xaml", typeof(global::MobileAcademicApp.EditAssessment))]
 
 namespace MobileAcademicApp {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("AddAssessment.xaml")]
-    public partial class AddAssessment : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("EditAssessment.xaml")]
+    public partial class EditAssessment : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ToolbarItem Save;
@@ -33,7 +33,7 @@ namespace MobileAcademicApp {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddAssessment));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(EditAssessment));
             Save = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ToolbarItem>(this, "Save");
             Cancel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ToolbarItem>(this, "Cancel");
             assessmentName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "assessmentName");

@@ -20,3 +20,5 @@ C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademic
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\TermDetail.xaml.g.cs
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\CourseDetail.xaml.g.cs
 C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\EditCourse.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\AssessmentDetail.xaml.g.cs
+C:\Users\chadl\source\repos\Mobile-Academic-App\MobileAcademicApp\MobileAcademicApp\obj\Debug\netstandard2.0\EditAssessment.xaml.g.cs

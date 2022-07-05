@@ -214,19 +214,10 @@ namespace MobileAcademicApp.Services
         }
 
         // ADD ASSESSMENT
-        public static async Task AddAssessment(int courseId, string name, string type, DateTime dueDate)
+        public static async Task AddAssessment(Models.Assessment assessment)
         {
             // Initialize the database
             await Init();
-
-            // Create the assessment based on all of the provided information
-            var assessment = new Models.Assessment
-            {
-                CourseId = courseId,
-                Name = name,
-                Type = type,
-                DueDate = dueDate
-            };
 
             // Adding the course in the database
             var id = await _db.InsertAsync(assessment);
@@ -243,7 +234,7 @@ namespace MobileAcademicApp.Services
         }
         
         // UPDATE ASSESSMENT
-        public static async Task UpdateAssessment(int id, int courseId, string name, string type, DateTime dueDate)
+        public static async Task UpdateAssessment(int id, Models.Assessment assessment)
         {
             // Initialize the database
             await Init();
@@ -257,10 +248,10 @@ namespace MobileAcademicApp.Services
             // Update the assessment based on the information provided
             if (assessmentQuery != null)
             {
-                assessmentQuery.CourseId = courseId;
-                assessmentQuery.Name = name;
-                assessmentQuery.Type = type;
-                assessmentQuery.DueDate = dueDate;
+                assessmentQuery.CourseId = assessment.CourseId;
+                assessmentQuery.Name = assessment.Name;
+                assessmentQuery.Type = assessment.Type;
+                assessmentQuery.DueDate = assessment.DueDate;
 
                 // Updating the database with the new information
                 await _db.UpdateAsync(assessmentQuery);

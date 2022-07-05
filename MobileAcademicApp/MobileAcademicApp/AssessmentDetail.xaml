@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAcademicApp.AssessmentDetail"
+             Title="Assessment Details">
+    
+    <!-- ASSESSMENT DETAIL -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" x:Name="Edit" Clicked="Edit_Clicked"/>
+        <ToolbarItem Text="Delete" x:Name="Delete" Clicked="Delete_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <!-- Assessment Details -->
+    <StackLayout Margin="20,20,20,0">
+        <Label x:Name="assessmentName"/>
+        <Label x:Name="assessmentDueDate"/>
+        <Label x:Name="assessmentType"/>
+    </StackLayout>    
+
+</ContentPage>
