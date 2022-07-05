@@ -28,7 +28,7 @@ namespace MobileAcademicApp
             courseName.Text = "Name: " + _course.Name;                         
             startDate.Text = "Start Date: " + _course.StartDate.ToString("MM/dd/yy");
             endDate.Text = "End Date: " + _course.EndDate.ToString("MM/dd/yy");
-            status.Text = "Status: " + _course.Status;
+            status.Text = "Status: " + _course.Status.ToString();
             instructorName.Text = "Instructor Name: " + _course.InstructorName;
             instructorPhone.Text = "Instructor Phone: " + _course.InstructorPhoneNumber;
             instructorEmail.Text = "Instructor Email: " + _course.InstructorEmail;
@@ -51,7 +51,7 @@ namespace MobileAcademicApp
         {
             // When the "Edit" button is clicked, we navigate to EditCourse, sending the current course
             // as the parameter
-            //await Navigation.PushAsync(new EditCourse(_course));
+            await Navigation.PushAsync(new EditCourse(_course));
         }
 
         private async void deleteCourse_Clicked(object sender, EventArgs e)

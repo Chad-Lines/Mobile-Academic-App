@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAcademicApp.EditCourse"
+             Title="Edit Course">
+
+    <!-- EDIT COURSE -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" x:Name="Save" Clicked="Save_Clicked"/>
+        <ToolbarItem Text="Cancel" x:Name="Cancel" Clicked="Cancel_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Margin="20, 20, 20, 0">
+
+        <!-- The Add Course Label -->
+        <Label Text="Add Course" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+        <!-- Defining the fields we need to add a new course -->
+        <Entry Placeholder="Course Name" IsSpellCheckEnabled="false" x:Name="courseName"/>
+        <Label Text="Start Date"/>
+        <DatePicker x:Name="startDate"/>
+        <Label Text="End Date"/>
+        <DatePicker x:Name="endDate"/>
+
+        <Picker Title="Course Status" x:Name="status">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Upcoming</x:String>
+                    <x:String>In Progress</x:String>
+                    <x:String>Completed</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Entry Placeholder="Instructor Name" IsSpellCheckEnabled="false" x:Name="instructorName"/>
+        <Entry Placeholder="Instructor Phone Number" Keyboard="Telephone" x:Name="instructorPhone"/>
+        <Entry Placeholder="Instructor Email" Keyboard="Email" x:Name="instructorEmail"/>
+        <Editor Placeholder="Notes" AutoSize="TextChanges" x:Name="notes"/>
+
+        <!-- Assessment label -->
+        <Label Text="Assessments" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+        <!-- Allow the user to add a new assessment to the term -->
+        <Button Text="Add New Assessment" x:Name="addNewAssessmentButton" Clicked="addNewAssessmentButton_Clicked"/>
+
+        <!-- Assessment list -->
+        <CollectionView
+        x:Name="assessmentsCollectionView"
+        ItemsSource="{Binding Models.Assessment}" 
+        EmptyView="Assessment list is empty"
+        SelectionMode="Single"
+        SelectionChanged="assessmentsCollectionView_SelectionChanged"
+        >
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Grid Padding="5" RowSpacing="1" ColumnSpacing="22" BackgroundColor="WhiteSmoke">
+
+                            <!-- Defining the grid row heights -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Defining the grid row widths -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Defining the formatting for the Assessment name. This is the first row (Grid.Row="0") -->
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="Medium" VerticalOptions="Center" FontAttributes="Bold" Text="{Binding Name}"/>
+                            <Label Grid.Row="1" Grid.Column="0" FontSize="Medium" VerticalOptions="Center" Text="{Binding Type}"/>
+                            <Label Grid.Row="2" Text="{Binding StartDate, StringFormat='{}{0:MM/dd/yyyy}'}"/>
+
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+    </StackLayout>
+
+</ContentPage>

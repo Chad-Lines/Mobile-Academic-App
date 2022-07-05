@@ -167,8 +167,7 @@ namespace MobileAcademicApp.Services
         }
 
         // UPDATE COURSE
-        public static async Task UpdateCourse(int id, int termId, string name, DateTime startDate, DateTime endDate, string status,
-            string instructorName, string instructorPhoneNumber, string instructorEmail, string notes)
+        public static async Task UpdateCourse(int id, Models.Course course)
         {
             // Initialize the database
             await Init();
@@ -181,15 +180,15 @@ namespace MobileAcademicApp.Services
             // Create the course based on all of the provided information
             if (courseQuery != null)
             {
-                courseQuery.TermId = termId;
-                courseQuery.Name = name;
-                courseQuery.StartDate = startDate;
-                courseQuery.EndDate = endDate;
-                courseQuery.Status = status;
-                courseQuery.InstructorName = instructorName;
-                courseQuery.InstructorPhoneNumber = instructorPhoneNumber;
-                courseQuery.InstructorEmail = instructorEmail;
-                courseQuery.Notes = notes;
+                courseQuery.TermId = course.TermId;
+                courseQuery.Name = course.Name;
+                courseQuery.StartDate = course.StartDate;
+                courseQuery.EndDate = course.EndDate;
+                courseQuery.Status = course.Status;
+                courseQuery.InstructorName = course.InstructorName;
+                courseQuery.InstructorPhoneNumber = course.InstructorPhoneNumber;
+                courseQuery.InstructorEmail = course.InstructorEmail;
+                courseQuery.Notes = course.Notes;
 
                 // Updating the database with the new information
                 await _db.UpdateAsync(courseQuery);

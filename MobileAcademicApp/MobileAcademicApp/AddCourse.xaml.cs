@@ -30,12 +30,17 @@ namespace MobileAcademicApp
             course.Name = courseName.Text;
             course.StartDate = startDate.Date;
             course.EndDate = endDate.Date;
+            course.Status = status.SelectedItem.ToString();
+            course.InstructorName = instructorName.Text;
+            course.InstructorPhoneNumber = instructorPhone.Text;
+            course.InstructorEmail = instructorEmail.Text;
+            course.Notes = notes.Text;
 
             // Add the course to the database
             await Services.DatabaseService.AddCourse(course);
 
             // Navigate back to the term detail page
             await Navigation.PushAsync(new TermDetail(_term));
-        }        
+        }
     }
 }
