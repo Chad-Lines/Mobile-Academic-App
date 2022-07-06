@@ -48,23 +48,47 @@ namespace MobileAcademicApp
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-            // Create the course based on the user input
-            Models.Course updatedCourse = new Models.Course();
-            updatedCourse.Id = _course.Id;
-            updatedCourse.TermId = _course.TermId;
-            updatedCourse.Name = courseName.Text;
-            updatedCourse.StartDate = startDate.Date;
-            updatedCourse.EndDate = endDate.Date;
-            updatedCourse.Status = status.SelectedItem.ToString();
-            updatedCourse.InstructorName = instructorName.Text;
-            updatedCourse.InstructorPhoneNumber = instructorPhone.Text;
-            updatedCourse.InstructorEmail = instructorEmail.Text;
+            if (Services.DataValidation.CheckForNull(courseName.Text) &&                    // Check the course name
+                Services.DataValidation.CheckForNull(instructorName.Text) &&                // Check the instructor name
+                Services.DataValidation.CheckForNull(instructorPhone.Text))                 // Check the instructor phone
+            {
+                if (Services.DataValidation.CheckEmail(instructorEmail.Text))               // Check the instructor email
+                {
+                    if (Services.DataValidation.CheckDates(startDate.Date, endDate.Date))   // Check the dates
+                    {
+                        // Create the course based on the user input
+                        Models.Course updatedCourse = new Models.Course();
+                        updatedCourse.Id = _course.Id;
+                        updatedCourse.TermId = _course.TermId;
+                        updatedCourse.Name = courseName.Text;
+                        updatedCourse.StartDate = startDate.Date;
+                        updatedCourse.EndDate = endDate.Date;
+                        updatedCourse.Status = status.SelectedItem.ToString();
+                        updatedCourse.InstructorName = instructorName.Text;
+                        updatedCourse.InstructorPhoneNumber = instructorPhone.Text;
+                        updatedCourse.InstructorEmail = instructorEmail.Text;
 
-            // Updating the database with the user-provided information
-            await Services.DatabaseService.UpdateCourse(_course.Id, updatedCourse);
-            
-            // Navigate back to the course detail page
-            await Navigation.PushAsync(new MainPage()); 
+                        // Updating the database with the user-provided information
+                        await Services.DatabaseService.UpdateCourse(_course.Id, updatedCourse);
+
+                        // Navigate back to the course detail page
+                        await Navigation.PushAsync(new MainPage());
+                    }
+                    // Display descriptive errors when the checks fail
+                    else
+                    {
+                        await DisplayAlert("Error", "Check that the start date is before the end date.", "OK");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Error", "Check that the email address if formatted correctly.", "OK");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error", "Please complete all fields.", "OK");
+            }
         }
 
         private async void Cancel_Clicked(object sender, EventArgs e)
