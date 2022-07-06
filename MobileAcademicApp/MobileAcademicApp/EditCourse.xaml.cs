@@ -82,7 +82,7 @@ namespace MobileAcademicApp
                 }
                 else
                 {
-                    await DisplayAlert("Error", "Check that the email address if formatted correctly.", "OK");
+                    await DisplayAlert("Error", "Check that the email address is formatted correctly.", "OK");
                 }
             }
             else

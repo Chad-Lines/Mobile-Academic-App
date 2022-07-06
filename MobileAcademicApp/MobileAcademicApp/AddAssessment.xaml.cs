@@ -23,18 +23,31 @@ namespace MobileAcademicApp
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
-            // Create the new model based on user input
-            Models.Assessment assessment = new Models.Assessment();
-            assessment.CourseId = _course.Id;
-            assessment.Name = assessmentName.Text;
-            assessment.DueDate = assessmentDueDate.Date;
-            assessment.Type = assessmentType.SelectedItem.ToString();
+            // Capturing the status as a string so we can evaluate it in the data validation check
+            string status = assessmentType.SelectedItem.ToString();
 
-            // Adding the assessment to the database
-            await Services.DatabaseService.AddAssessment(assessment);
+            // Check that another assessment of the same type doesn't already exist
+            if (Services.DataValidation.CheckAssessmentType(_course, status))
+            {
+                // Create the new model based on user input
+                Models.Assessment assessment = new Models.Assessment();
+                assessment.CourseId = _course.Id;
+                assessment.Name = assessmentName.Text;
+                assessment.DueDate = assessmentDueDate.Date;
+                assessment.Type = status;
 
-            // Navigate back to the course detail page
-            await Navigation.PushAsync(new MainPage());
+                // Adding the assessment to the database
+                await Services.DatabaseService.AddAssessment(assessment);
+
+                // Navigate back to the course detail page
+                await Navigation.PushAsync(new MainPage());
+            }
+            else
+            {
+                // Display an error if an assessment of this type already exists
+                await DisplayAlert("Error", "Courses can have only one assessment of each type.", "OK");
+            }
+            
         }
 
         private async void Cancel_Clicked(object sender, EventArgs e)

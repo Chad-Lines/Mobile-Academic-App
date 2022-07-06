@@ -45,5 +45,32 @@ namespace MobileAcademicApp.Services
             // Otherwise return false
             return first < last ? true : false;
         }
+
+        public static bool CheckCourseCount(Models.Term term)
+        {
+            
+            int count = 0;                                                      // Set count variable 
+            var courses = Services.DatabaseService.GetCoursesForTerm(term.Id);  // Get the courses for the term provided 
+
+            foreach (Models.Course c in courses.Result) count++;                // Count the courses in the term
+            if (count >= 6) return false;                                       // If there are 6 or more, then check fails
+            else return true;                                                   // Otherwise, the check succeeds
+        }
+
+        public static bool CheckAssessmentType(Models.Course course, string assessmentType)
+        {
+            var assessments = Services.DatabaseService.GetAssessmentsForCourse(course.Id);  // Get the assessments for the term provided
+
+            if (assessments == null) { return true; }                                       // If there are no assessments, return true
+            else
+            {
+                foreach (Models.Assessment a in assessments.Result)                         // Comparing the assessments
+                {
+                    if (a.Type == assessmentType) { return false; }                         // If an assessment of the same type exists, fail
+                }
+            }           
+
+            return true;                                                                    // Otherwise return true
+        }
     }
 }
