@@ -19,6 +19,7 @@
         <Entry Placeholder="Assessment Name" IsSpellCheckEnabled="false" x:Name="assessmentName"/>
         <Label Text="Due Date"/>
         <DatePicker x:Name="assessmentDueDate"/>
+        
         <Picker Title="Assessment Type" x:Name="assessmentType">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">

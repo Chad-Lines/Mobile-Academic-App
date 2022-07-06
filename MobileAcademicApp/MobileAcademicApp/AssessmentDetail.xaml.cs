@@ -27,7 +27,7 @@ namespace MobileAcademicApp
             // Setting the assessment details
             assessmentName.Text = "Name: " + _assessment.Name;
             assessmentDueDate.Text = "Due Date: " + _assessment.DueDate.ToString("MM/dd/yy");
-            assessmentType.Text = "Type: " + _assessment.Type.ToString();
+            assessmentType.Text = "Type: " + _assessment.Type;
         }
 
         private async void Edit_Clicked(object sender, EventArgs e)
