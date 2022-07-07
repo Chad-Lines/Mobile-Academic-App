@@ -61,6 +61,12 @@ namespace MobileAcademicApp
         }
         private async void addNewCourseButton_Clicked(object sender, EventArgs e)
         {
+            /*
+             ***********************************************************************************
+             * Objective B.2: Provide information about the term and allow user to add courses
+             *********************************************************************************** 
+             */
+
             // Go to the New Course screen
             await Navigation.PushAsync(new AddCourse(_term));
         }

@@ -22,6 +22,12 @@ namespace MobileAcademicApp
 
         protected override async void OnAppearing()
         {
+            /*
+             ********************************************************************
+             * Objective B.3: Allow the user to edit details for each course
+             ******************************************************************** 
+             */
+
             base.OnAppearing();
 
             // Setting the course details
@@ -104,6 +110,12 @@ namespace MobileAcademicApp
 
         private async void addNewAssessmentButton_Clicked(object sender, EventArgs e)
         {
+            /*
+             ********************************************************************
+             * Objective B.4: Allow the user to add assessments to each course
+             ********************************************************************  
+             */
+
             // Navigate to the add assessment page
             await Navigation.PushAsync(new AddAssessment(_course));
         }

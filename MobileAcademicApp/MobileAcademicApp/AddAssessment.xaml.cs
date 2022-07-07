@@ -23,6 +23,13 @@ namespace MobileAcademicApp
 
         private async void Save_Clicked(object sender, EventArgs e)
         {
+            /*
+             ************************************************************************************** 
+             * Objective A.3: Add two assessments for each course - one objective, one performance
+             * Objective B.5: Add, edit, and delete assessments
+             **************************************************************************************
+             */
+
             // Capturing the status as a string so we can evaluate it in the data validation check
             string status = assessmentType.SelectedItem.ToString();
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace MobileAcademicApp
 {
@@ -76,6 +77,16 @@ namespace MobileAcademicApp
                 Models.Assessment assessment = (Models.Assessment)e.CurrentSelection.FirstOrDefault();  // Load the term
                 await Navigation.PushAsync(new AssessmentDetail(assessment));                           // Navigate to the edit assessment page
             }
+        }
+
+        private async void shareNotes_Clicked(object sender, EventArgs e)
+        {
+            /*
+             ******************************************************************
+             * Objective B.4: Allow the user to share their notes
+             ****************************************************************** 
+             */
+            await Share.RequestAsync(new ShareTextRequest { Text = notes.Text, Title="Share Note" });
         }
     }
 }

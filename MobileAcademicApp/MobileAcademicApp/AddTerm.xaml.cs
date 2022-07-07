@@ -18,7 +18,14 @@ namespace MobileAcademicApp
         }
 
         private async void saveTermButton_Clicked(object sender, EventArgs e)
-        {            
+        {
+            /*
+             ************************************************************ 
+             * Objective A.1: Add Academic Terms as Needed
+             ************************************************************ 
+             */
+
+
             Models.Term term = new Models.Term();           // Create a new term object
             term.Name = termName.Text;                      // Sett the parameters per user input
             term.StartDate = termStartDate.Date;

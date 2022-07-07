@@ -21,6 +21,12 @@ namespace MobileAcademicApp
         }
         protected override async void OnAppearing()
         {
+            /*
+             ************************************************************************************** 
+             * Objective B.5: Add, edit, and delete assessments
+             **************************************************************************************
+             */
+
             base.OnAppearing();
 
             // Setting the course details

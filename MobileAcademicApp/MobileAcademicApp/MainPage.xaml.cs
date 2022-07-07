@@ -17,6 +17,13 @@ namespace MobileAcademicApp
 
         protected override async void OnAppearing()
         {
+            /*
+             ****************************************************************** 
+             * Objective B.1: Create an interface for viewing academic terms
+             ******************************************************************
+             */
+
+
             base.OnAppearing();
             
             var terms = await Services.DatabaseService.GetAllTerms();   // Get a list of terms from the database
