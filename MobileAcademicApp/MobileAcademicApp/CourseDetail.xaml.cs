@@ -33,6 +33,7 @@ namespace MobileAcademicApp
             instructorName.Text = "Instructor Name: " + _course.InstructorName;
             instructorPhone.Text = "Instructor Phone: " + _course.InstructorPhoneNumber;
             instructorEmail.Text = "Instructor Email: " + _course.InstructorEmail;
+            notify.Text = "Notifications Enabled: " + _course.Notify.ToString(); 
             notes.Text = "Notes: " + _course.Notes;
 
             var assessments = await Services.DatabaseService.GetAssessmentsForCourse(_course.Id);   // Getting a list of associated courses

@@ -15,6 +15,7 @@
         <Label x:Name="assessmentName"/>
         <Label x:Name="assessmentDueDate"/>
         <Label x:Name="assessmentType"/>
+        <Label x:Name="assessmentNotify"/>
     </StackLayout>    
 
 </ContentPage>

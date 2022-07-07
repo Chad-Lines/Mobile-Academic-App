@@ -28,6 +28,7 @@ namespace MobileAcademicApp
             assessmentName.Text = "Name: " + _assessment.Name;
             assessmentDueDate.Text = "Due Date: " + _assessment.DueDate.ToString("MM/dd/yy");
             assessmentType.Text = "Type: " + _assessment.Type;
+            assessmentNotify.Text = "Notifications Enabled: " + _assessment.Notify.ToString();
         }
 
         private async void Edit_Clicked(object sender, EventArgs e)

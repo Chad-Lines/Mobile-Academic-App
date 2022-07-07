@@ -20,8 +20,9 @@
         <Label x:Name="instructorName"/>
         <Label x:Name="instructorPhone"/>
         <Label x:Name="instructorEmail"/>
-        <Label x:Name="notes"/>
-        
+        <Label x:Name="notify"/>
+        <Label x:Name="notes"/>        
+
         <!-- The button to share notes -->
         <Button Text="Share Notes" BackgroundColor="DodgerBlue" TextColor="White" Margin="0,10,0,20"
                 x:Name="shareNotes" Clicked="shareNotes_Clicked"/>

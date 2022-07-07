@@ -36,6 +36,10 @@
         <Entry Placeholder="Instructor Name" IsSpellCheckEnabled="false" x:Name="instructorName"/>
         <Entry Placeholder="Instructor Phone Number" Keyboard="Telephone" x:Name="instructorPhone"/>
         <Entry Placeholder="Instructor Email" Keyboard="Email" x:Name="instructorEmail"/>
+        <StackLayout Orientation="Horizontal">
+            <CheckBox x:Name="Notify"/>
+            <Label Text="Notify me about start and end dates" VerticalOptions="Center"/>
+        </StackLayout>
         <Editor Placeholder="Notes" AutoSize="TextChanges" x:Name="notes"/>
 
         <!-- Assessment label -->

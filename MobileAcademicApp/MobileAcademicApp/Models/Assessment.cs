@@ -13,5 +13,6 @@ namespace MobileAcademicApp.Models
         public string Name { get; set; }
         public string Type { get; set; }
         public DateTime DueDate { get; set; }
+        public bool Notify { get; set; }
     }
 }

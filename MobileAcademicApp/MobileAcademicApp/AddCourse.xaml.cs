@@ -50,6 +50,7 @@ namespace MobileAcademicApp
                             course.InstructorName = instructorName.Text;
                             course.InstructorPhoneNumber = instructorPhone.Text;
                             course.InstructorEmail = instructorEmail.Text;
+                            course.Notify = Notify.IsChecked;
                             course.Notes = notes.Text;
 
                             // Add the course to the database

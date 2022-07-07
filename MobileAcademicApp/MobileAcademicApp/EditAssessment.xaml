@@ -28,6 +28,10 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+        <StackLayout Orientation="Horizontal">
+            <CheckBox x:Name="Notify"/>
+            <Label Text="Notify me of the due date." VerticalOptions="Center"/>
+        </StackLayout>
 
     </StackLayout>
 </ContentPage>

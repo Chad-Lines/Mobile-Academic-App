@@ -42,6 +42,7 @@ namespace MobileAcademicApp
                 assessment.Name = assessmentName.Text;
                 assessment.DueDate = assessmentDueDate.Date;
                 assessment.Type = status;
+                assessment.Notify = Notify.IsChecked;
 
                 // Adding the assessment to the database
                 await Services.DatabaseService.AddAssessment(assessment);

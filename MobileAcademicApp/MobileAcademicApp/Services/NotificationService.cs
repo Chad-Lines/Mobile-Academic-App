@@ -22,18 +22,35 @@ namespace MobileAcademicApp.Services
                 // If the course starts today, show a notification
                 if (c.StartDate == DateTime.Today)
                 {
-                    // Here we create the notification. For future reference:
-                    // "Course Start": this is the title of the notification
-                    // "${c.Name} starts today.": This is the body of the notification,
-                    //      where "${c.Name}" is the name of the course
-                    // "c.Id": This is the UID of the notification. In this case I'm just setting
-                    //      it to match the course ID
-                    CrossLocalNotifications.Current.Show("Course Start Notification", $"{c.Name} starts today!", c.Id);
+                    // Check if the user has opted in for notifications
+                    if (c.Notify == true)
+                    {
+                        // Here we create the notification. For future reference:
+                        // "Course Start": this is the title of the notification
+                        // "${c.Name} starts today.": This is the body of the notification,
+                        //      where "${c.Name}" is the name of the course
+                        // "c.Id": This is the UID of the notification. In this case I'm just setting
+                        //      it to match the course ID
+                        CrossLocalNotifications.Current.Show("Course Start Notification", $"{c.Name} starts today!", c.Id);
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
                 // If the course ends today, show a notification
                 else if (c.EndDate == DateTime.Today)
                 {
-                    CrossLocalNotifications.Current.Show("Course End Notification", $"{c.Name} ends today!", c.Id);
+                    // Check if the user has opted for notifications
+                    if (c.Notify == true)
+                    {
+                        CrossLocalNotifications.Current.Show("Course End Notification", $"{c.Name} ends today!", c.Id);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    
                 }
                 // If there's no match, then we just continue
                 else
@@ -57,7 +74,15 @@ namespace MobileAcademicApp.Services
             {
                 if (a.DueDate == DateTime.Today)
                 {
-                    CrossLocalNotifications.Current.Show("Assessment Due Today!", $"Assessment: {a.Name} is due today!");
+                    // Check if the user has notifications enabled
+                    if (a.Notify == true)
+                    {
+                        CrossLocalNotifications.Current.Show("Assessment Due Today!", $"Assessment: {a.Name} is due today!");
+                    }
+                    else
+                    {
+                        continue;
+                    }                    
                 }
                 else
                 {

@@ -38,6 +38,7 @@ namespace MobileAcademicApp
             instructorName.Text = _course.InstructorName;
             instructorPhone.Text = _course.InstructorPhoneNumber;
             instructorEmail.Text = _course.InstructorEmail;
+            Notify.IsChecked = _course.Notify;
             notes.Text = _course.Notes;
 
             var assessments = await Services.DatabaseService.GetAssessmentsForCourse(_course.Id);   // Getting a list of associated courses
@@ -73,6 +74,8 @@ namespace MobileAcademicApp
                         updatedCourse.InstructorName = instructorName.Text;
                         updatedCourse.InstructorPhoneNumber = instructorPhone.Text;
                         updatedCourse.InstructorEmail = instructorEmail.Text;
+                        updatedCourse.Notify = Notify.IsChecked;
+                        updatedCourse.Notes = notes.Text;
 
                         // Updating the database with the user-provided information
                         await Services.DatabaseService.UpdateCourse(_course.Id, updatedCourse);

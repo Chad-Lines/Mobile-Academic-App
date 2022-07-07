@@ -33,6 +33,7 @@ namespace MobileAcademicApp
             assessmentName.Text = _assessment.Name;
             assessmentDueDate.Date = _assessment.DueDate;
             assessmentType.SelectedItem = _assessment.Type;
+            Notify.IsChecked = _assessment.Notify;
         }
 
         private async void Save_Clicked(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace MobileAcademicApp
             updatedAssessment.Name = assessmentName.Text;
             updatedAssessment.DueDate = assessmentDueDate.Date;
             updatedAssessment.Type = assessmentType.SelectedIndex.ToString();
+            updatedAssessment.Notify = Notify.IsChecked;
 
             // Updating the database with the user-provided information
             await Services.DatabaseService.UpdateAssessment(_assessment.Id, updatedAssessment);
