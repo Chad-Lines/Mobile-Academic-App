@@ -18,9 +18,17 @@ namespace MobileAcademicApp
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            
+            var terms = await Services.DatabaseService.GetAllTerms();   // Get a list of terms from the database
 
-            // When the page loads, update the list of terms
-            termsCollectionView.ItemsSource = await Services.DatabaseService.GetAllTerms();
+            if (terms.Count() == 0) {                
+                Services.BuildDummyData.BuildData();                    // If the list of terms is empty, create dummy data                
+                await Navigation.PushAsync(new MainPage());             // Refresh the page
+            }    
+            else 
+            {                   
+                termsCollectionView.ItemsSource = terms;                // Otherwise, set the item source to the terms
+            }                 
         }
 
         private async void newTermButton_Clicked(object sender, EventArgs e)
