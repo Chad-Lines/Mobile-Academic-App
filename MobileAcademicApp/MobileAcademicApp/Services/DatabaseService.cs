@@ -116,6 +116,19 @@ namespace MobileAcademicApp.Services
 
         #region COURSE OPERATIONS
 
+        // GET ALL COURSES
+        public static async Task<IEnumerable<Models.Course>> GetAllCourses()
+        {
+            // Initialize the database
+            await Init();
+
+            // Getting the list of all terms from the database
+            var courses = await _db.Table<Models.Course>().ToListAsync();
+
+            // Return the terms
+            return courses;
+        }
+
         // GET COURSES BY TERM
         public static async Task<IEnumerable<Models.Course>> GetCoursesForTerm(int termId) 
         {
@@ -198,6 +211,20 @@ namespace MobileAcademicApp.Services
         #endregion
 
         #region ASSESSMENT OPERATIONS
+
+        // GET ALL ASSESSMENTS
+        public static async Task<IEnumerable<Models.Assessment>> GetAllAssessments()
+        {
+            // Initialize the database
+            await Init();
+
+            // Getting the list of all terms from the database
+            var assessments = await _db.Table<Models.Assessment>().ToListAsync();
+
+            // Return the terms
+            return assessments;
+        }
+
         // GET ASSESSMENTS BY COURSE
         public static async Task<IEnumerable<Models.Assessment>> GetAssessmentsForCourse(int courseId)
         {

@@ -26,16 +26,24 @@ namespace MobileAcademicApp
 
             base.OnAppearing();
             
-            var terms = await Services.DatabaseService.GetAllTerms();   // Get a list of terms from the database
+            var terms = await Services.DatabaseService.GetAllTerms();       // Get a list of terms from the database
 
             if (terms.Count() == 0) {                
-                Services.BuildDummyData.BuildData();                    // If the list of terms is empty, create dummy data                
-                await Navigation.PushAsync(new MainPage());             // Refresh the page
+                Services.BuildDummyData.BuildData();                        // If the list of terms is empty, create dummy data                
+                await Navigation.PushAsync(new MainPage());                 // Refresh the page
             }    
             else 
             {                   
-                termsCollectionView.ItemsSource = terms;                // Otherwise, set the item source to the terms
-            }                 
+                termsCollectionView.ItemsSource = terms;                    // Otherwise, set the item source to the terms
+            }
+
+            // Get a list of all courses from the database and show notifications for them, if there are any
+            var courses = await Services.DatabaseService.GetAllCourses();   
+            Services.NotificationService.CallCourseNotifications(courses);
+
+            // Get a list of all asssessments from the database and show notifications for them, if there are any
+            var assessments = await Services.DatabaseService.GetAllAssessments();
+            Services.NotificationService.CallAssessmentNotifications(assessments);
         }
 
         private async void newTermButton_Clicked(object sender, EventArgs e)
@@ -58,5 +66,6 @@ namespace MobileAcademicApp
                 await Navigation.PushAsync(new TermDetail(term));                       // Navigate to the edit term page
             }
         }
+
     }
 }
